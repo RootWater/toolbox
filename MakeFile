@@ -1,0 +1,3 @@
+# 打包
+prod:
+	yarn && yarn clean:lib && yarn init:plugins && yarn init:tools && ts-node scripts/start-build.ts && yarn tsc:dts

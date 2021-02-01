@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "./",
+		"module": "ESNext",
+		"outDir": "es5",
+		"resolveJsonModule": true,
+		"declaration": true,
+		"declarationMap": false,
+		"removeComments": true,
+		"types": [
+			"jest",
+			"node",
+			"lodash"
+		]
+	}
+}

@@ -1,0 +1,38 @@
+{
+	"compilerOptions": {
+		"target": "ES5",
+		"module": "CommonJS",
+		"lib": [
+			"es5",
+			"esnext",
+			"dom",
+			"dom.iterable"
+		],
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"sourceMap": false,
+		"importHelpers": true,
+		"downlevelIteration": true,
+		"strict": true,
+		"noImplicitAny": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"typeRoots": [
+			"node_modules/@types",
+			"typings"
+		]
+	},
+	"include": [
+		"src/**/*.ts",
+		"typings/**/*.d.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"build",
+		"scripts",
+		"lib",
+		"test"
+	]
+}

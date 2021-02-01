@@ -1,0 +1,111 @@
+{
+	"name": "toolbox",
+	"version": "1.0.0",
+	"description": "开发工具库。",
+	"private": true,
+	"main": "lib/toolbox.js",
+	"module": "lib/toolbox.esm.js",
+	"typings": "typings/index.d.ts",
+	"author": "hhl",
+	"license": "MIT",
+	"files": [
+		"lib",
+		"typings",
+		"package.json",
+		"README.md",
+		"LICENSE"
+	],
+	"repository": "https://github.com/RootWater/toolbox.git",
+	"bugs": {
+		"url": "https://github.com/RootWater/toolbox/issues"
+	},
+	"homepage": "https://github.com/RootWater/toolbox#README.md",
+	"publishConfig": {
+		"registry": "http://localhost:4873"
+	},
+	"scripts": {
+		"init:plugins": "ts-node scripts/init-plugins.ts",
+		"init:tools": "ts-node scripts/init-tools.ts",
+		"build": "make prod",
+		"build:umd": "set TARGET=umd && ts-node scripts/start-build.ts",
+		"build:min": "set TARGET=min && ts-node scripts/start-build.ts",
+		"build:esm": "set TARGET=esm && ts-node scripts/start-build.ts",
+		"build:cjs": "set TARGET=cjs && ts-node scripts/start-build.ts",
+		"build:amd": "set TARGET=amd && ts-node scripts/start-build.ts",
+		"build:module": "set TARGET=module && ts-node scripts/start-build.ts",
+		"build:system": "set TARGET=system && ts-node scripts/start-build.ts",
+		"test": "jest --coverage --verbose -u --passWithNoTests",
+		"lint": "eslint --fix src",
+		"tsc": "rimraf es5 && tsc -b tsconfig.prod.json",
+		"tsc:dts": "rimraf es5 && tsc -b tsconfig.prod.json && api-extractor run && rimraf es5",
+		"api": "api-extractor run",
+		"clean": "yarn clean:lib && yarn clean:nm && yarn clean:es5",
+		"clean:lib": "rimraf lib",
+		"clean:es5": "rimraf es5",
+		"clean:nm": "rimraf node_modules",
+		"prepublishOnly": "yarn lint & yarn test & yarn changelog & make prod",
+		"publish:patch": "yarn prepublishOnly && npm version patch && npm publish",
+		"publish:minor": "yarn prepublishOnly && npm version minor && npm publish",
+		"publish:major": "yarn prepublishOnly && npm version major && npm publish",
+		"publish:premajor": "yarn prepublishOnly && npm version premajor && npm publish",
+		"commit": "git cz",
+		"changelog": "ts-node scripts/init-changelog.ts"
+	},
+	"dependencies": {
+		"@babel/polyfill": "^7.12.1",
+		"axios": "^0.21.1",
+		"core-js": "3",
+		"dayjs": "^1.10.4",
+		"lodash": "^4.17.20",
+		"ts-node": "^9.1.1",
+		"tslib": "^2.1.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.12.10",
+		"@babel/plugin-external-helpers": "^7.12.1",
+		"@babel/preset-env": "^7.12.11",
+		"@microsoft/api-extractor": "^7.13.0",
+		"@types/assert": "^1.5.4",
+		"@types/jest": "^26.0.20",
+		"@types/lodash": "^4.14.168",
+		"@types/node": "^14.14.22",
+		"@typescript-eslint/eslint-plugin": "^4.14.0",
+		"@typescript-eslint/parser": "^4.14.0",
+		"assert": "^2.0.0",
+		"chalk": "^4.1.0",
+		"conventional-changelog-cli": "^2.1.1",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^7.18.0",
+		"eslint-plugin-jest": "^24.1.3",
+		"jest": "^26.6.3",
+		"make": "^0.8.1",
+		"ora": "^5.3.0",
+		"rimraf": "^3.0.2",
+		"rollup": "^2.36.2",
+		"rollup-plugin-babel": "^4.4.0",
+		"rollup-plugin-commonjs": "^10.1.0",
+		"rollup-plugin-eslint": "^7.0.0",
+		"rollup-plugin-json": "^4.0.0",
+		"rollup-plugin-node-resolve": "^5.2.0",
+		"rollup-plugin-terser": "^7.0.2",
+		"rollup-plugin-typescript2": "^0.29.0",
+		"ts-jest": "^26.4.4",
+		"typescript": "^4.1.3"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged & jest -u"
+		}
+	},
+	"lint-staged": {
+		"*.{.ts,.js}": [
+			"eslint",
+			"git add"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
+}
