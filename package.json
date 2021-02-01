@@ -1,6 +1,6 @@
 {
 	"name": "toolbox",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "开发工具库。",
 	"private": true,
 	"main": "lib/toolbox.js",
