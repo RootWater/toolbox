@@ -13,6 +13,7 @@
 		"typings",
 		"package.json",
 		"README.md",
+		"CHANGELOG.md",
 		"LICENSE"
 	],
 	"repository": "https://github.com/RootWater/toolbox.git",
@@ -44,10 +45,10 @@
 		"clean:es5": "rimraf es5",
 		"clean:nm": "rimraf node_modules",
 		"prepublishOnly": "yarn lint & yarn test & yarn changelog & make prod",
-		"publish:patch": "yarn prepublishOnly && npm version patch && npm publish",
-		"publish:minor": "yarn prepublishOnly && npm version minor && npm publish",
-		"publish:major": "yarn prepublishOnly && npm version major && npm publish",
-		"publish:premajor": "yarn prepublishOnly && npm version premajor && npm publish",
+		"publish:patch": "npm version patch && npm publish",
+		"publish:minor": "npm version minor && npm publish",
+		"publish:major": "npm version major && npm publish",
+		"publish:premajor": "npm version premajor && npm publish",
 		"commit": "git cz",
 		"changelog": "ts-node scripts/init-changelog.ts"
 	},
