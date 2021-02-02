@@ -1,6 +1,6 @@
 {
 	"name": "toolbox",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "开发工具库。",
 	"main": "./lib/toolbox.js",
 	"module": "./lib/toolbox.esm.js",
