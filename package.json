@@ -2,11 +2,17 @@
 	"name": "toolbox",
 	"version": "1.0.1",
 	"description": "开发工具库。",
-	"main": "lib/toolbox.js",
-	"module": "lib/toolbox.esm.js",
-	"typings": "typings/index.d.ts",
+	"main": "./lib/toolbox.js",
+	"module": "./lib/toolbox.esm.js",
+	"typings": "./typings/index.d.ts",
 	"author": "hhl",
 	"license": "MIT",
+	"keywords": [
+		"tool",
+		"utils",
+		"toolbox",
+		"dev-utils"
+	],
 	"files": [
 		"lib",
 		"typings",
