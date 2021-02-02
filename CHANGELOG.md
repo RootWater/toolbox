@@ -1,5 +1,14 @@
 # 工具库更新日志
 
+## [1.0.4](https://github.com/RootWater/toolbox/compare/v1.0.3...v1.0.4) (2021-02-02)
+
+
+### Bug Fixes
+
+* **build/utils/plugins.ts:** 关闭 babel 运行时处理 ([3504687](https://github.com/RootWater/toolbox/commit/350468790ee5159d817b328650f5e2c7de2c04ac))
+
+
+
 ## [1.0.3](https://github.com/RootWater/toolbox/compare/v1.0.2...v1.0.3) (2021-02-02)
 
 

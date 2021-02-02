@@ -1,4 +1,4 @@
-import { bigCamelCase, getExternal, resolve } from './utils/util';
+import { getExternal, getLibName, resolve } from './utils/util';
 import { name as pkgName, version, author, description } from '../package.json';
 import { RollupOptions } from 'rollup';
 import dayjs from 'dayjs';
@@ -11,7 +11,7 @@ const createBaseConfig = (): RollupOptions => ({
 	/* 输出配置 */
 	output: {
 		/* 库名，作为 script 导入的默认名称 */
-		name: bigCamelCase(pkgName),
+		name: getLibName(),
 
 		/* 模块格式类型 */
 		format: 'umd',

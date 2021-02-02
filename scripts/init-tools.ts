@@ -54,9 +54,12 @@ const getToolFiles = (dirs: string[]) => {
 const writeFile = (files: any[]) => {
 	const WRITE_FILE_OPTIONS: fs.WriteFileOptions = { encoding: 'utf-8' };
 	const importContent = files.map((f: any) => `import ${f.name} from '${f.path}';`).join('\n');
-	const exportContent = `export { ${files.map((f: any) => f.name).join(', ')} }`;
+	const exportContent = `export { ${files.map((f: any) => f.name).join(', ')} };`;
+	const exportDefaultContent = `export default { ${files.map((f: any) => f.name).join(', ')} };`;
 
-	fs.writeFileSync(resolve('index.ts'), `${importContent}\n${exportContent}`, WRITE_FILE_OPTIONS);
+	const writeContent = `${importContent}\n${exportContent}\n${exportDefaultContent}`;
+
+	fs.writeFileSync(resolve('index.ts'), writeContent, WRITE_FILE_OPTIONS);
 
 	building.success(`入口文件写入完成，路径：${resolve('index.ts')}`);
 };

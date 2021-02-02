@@ -1,6 +1,6 @@
 import { join, relative as relativeDir } from 'path';
 import _ from 'lodash';
-import { dependencies } from '../../package.json';
+import { name as pkgName, dependencies } from '../../package.json';
 import fs from 'fs';
 
 /** 获取项目目录下的文件地址 */
@@ -86,3 +86,6 @@ export const delDir = (dest: string, includeSelf = true, building?: any) => {
 	/* 删除文件夹自身 */
 	includeSelf && fs.rmdirSync(dest);
 };
+
+/** 获取库名 */
+export const getLibName = () => bigCamelCase(pkgName);

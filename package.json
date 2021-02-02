@@ -16,6 +16,7 @@
 	"files": [
 		"lib",
 		"typings",
+		"markdown",
 		"package.json",
 		"README.md",
 		"CHANGELOG.md",
