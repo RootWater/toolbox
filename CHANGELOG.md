@@ -1,5 +1,14 @@
 # 工具库更新日志
 
+## [1.0.6](https://github.com/RootWater/toolbox/compare/v1.0.5...v1.0.6) (2021-02-02)
+
+
+### Bug Fixes
+
+* **lib-export-default:** 修复函数库默认导出 ([ae01dfd](https://github.com/RootWater/toolbox/commit/ae01dfd36bd87ccc9919be032a7cacf9e5ed00f3))
+
+
+
 ## [1.0.5](https://github.com/RootWater/toolbox/compare/v1.0.4...v1.0.5) (2021-02-02)
 
 
