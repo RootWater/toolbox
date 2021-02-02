@@ -75,4 +75,15 @@ import uniqWith from './lodash-tool/uniqWith';
 import upperCase from './lodash-tool/upperCase';
 import upperFirst from './lodash-tool/upperFirst';
 import words from './lodash-tool/words';
-export { oneOf, assign, assignWith, at, camelCase, capitalize, castArray, clamp, cloneDeep, compact, debounce, deburr, defaults, defaultsDeep, delay, difference, differenceBy, differenceWith, filter, findIndex, findKey, findLastIndex, findLastKey, flattenDepth, fromEntries, get, has, hasIn, initial, inRange, intersection, intersectionBy, intersectionWith, isEqual, isEqualWith, kebabCase, lowerCase, lowerFirst, maxBy, meanBy, merge, mergeWith, minBy, nth, omit, omitBy, once, orderBy, pick, pickBy, pull, pullAll, pullAllBy, pullAllWith, random, range, rangeRight, reject, remove, sample, sampleSize, shuffle, sortedUniq, sortedUniqBy, throttle, toPath, truncate, union, unionBy, unionWith, uniq, uniqBy, uniqueId, uniqWith, upperCase, upperFirst, words }
+import checkType from './object-tool/checkType';
+import defaultIfEmpty from './object-tool/defaultIfEmpty';
+import getRawType from './object-tool/getRawType';
+import isEmpty from './object-tool/isEmpty';
+import obj2FormData from './object-tool/obj2FormData';
+import base64Decode from './string-tool/base64Decode';
+import base64Encode from './string-tool/base64Encode';
+import countMatches from './string-tool/countMatches';
+import deleteWhitespace from './string-tool/deleteWhitespace';
+import strEqualIgnoreCase from './string-tool/strEqualIgnoreCase';
+import swapCase from './string-tool/swapCase';
+export { oneOf, assign, assignWith, at, camelCase, capitalize, castArray, clamp, cloneDeep, compact, debounce, deburr, defaults, defaultsDeep, delay, difference, differenceBy, differenceWith, filter, findIndex, findKey, findLastIndex, findLastKey, flattenDepth, fromEntries, get, has, hasIn, initial, inRange, intersection, intersectionBy, intersectionWith, isEqual, isEqualWith, kebabCase, lowerCase, lowerFirst, maxBy, meanBy, merge, mergeWith, minBy, nth, omit, omitBy, once, orderBy, pick, pickBy, pull, pullAll, pullAllBy, pullAllWith, random, range, rangeRight, reject, remove, sample, sampleSize, shuffle, sortedUniq, sortedUniqBy, throttle, toPath, truncate, union, unionBy, unionWith, uniq, uniqBy, uniqueId, uniqWith, upperCase, upperFirst, words, checkType, defaultIfEmpty, getRawType, isEmpty, obj2FormData, base64Decode, base64Encode, countMatches, deleteWhitespace, strEqualIgnoreCase, swapCase }

@@ -4,10 +4,10 @@
 	"bundledPackages": [],
 	"compiler": {},
 	"apiReport": {
-		"enabled": false
+		"enabled": true
 	},
 	"docModel": {
-		"enabled": false
+		"enabled": true
 	},
 	"dtsRollup": {
 		"enabled": true,
