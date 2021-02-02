@@ -8,18 +8,27 @@ const apiExtractorJsonPath: string = resolve('api-extractor.json');
 const extractorConfig: ExtractorConfig = ExtractorConfig.loadFileAndPrepare(apiExtractorJsonPath);
 
 const FILE_OPTIONS: BaseEncodingOptions = { encoding: 'utf-8' };
+const libName = getLibName();
 
 // 处理 dts 文件中的默认导出
-let targetFileContent = fs.readFileSync(
+const targetFileContent = fs.readFileSync(
 	extractorConfig.mainEntryPointFilePath,
 	FILE_OPTIONS
 ) as string;
-targetFileContent = targetFileContent.substr(
+const targetImportContent = targetFileContent.substring(
 	0,
-	targetFileContent.indexOf('declare const _default')
+	targetFileContent.indexOf(`declare const ${libName}`)
+);
+const targetExportContent = targetFileContent.substring(
+	targetFileContent.indexOf('export {'),
+	targetFileContent.indexOf(`export default ${libName}`)
 );
 
-fs.writeFileSync(extractorConfig.mainEntryPointFilePath, targetFileContent, FILE_OPTIONS);
+fs.writeFileSync(
+	extractorConfig.mainEntryPointFilePath,
+	`${targetImportContent}\n${targetExportContent}`,
+	FILE_OPTIONS
+);
 
 // Invoke API Extractor
 const extractorResult: ExtractorResult = Extractor.invoke(extractorConfig, {
@@ -40,7 +49,6 @@ if (extractorResult.succeeded) {
 }
 
 // 为最后的函数库声明文件添加命名空间
-const libName = getLibName();
 let outputFileContent = fs.readFileSync(extractorConfig.untrimmedFilePath, FILE_OPTIONS) as string;
 outputFileContent =
 	outputFileContent

@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { resolveSrc as resolve } from '../build/utils/util';
+import { getLibName, resolveSrc as resolve } from '../build/utils/util';
 import _ from 'lodash';
 import Ora from '../build/utils/ora';
 
@@ -53,11 +53,16 @@ const getToolFiles = (dirs: string[]) => {
 
 const writeFile = (files: any[]) => {
 	const WRITE_FILE_OPTIONS: fs.WriteFileOptions = { encoding: 'utf-8' };
-	const importContent = files.map((f: any) => `import ${f.name} from '${f.path}';`).join('\n');
-	const exportContent = `export { ${files.map((f: any) => f.name).join(', ')} };`;
-	const exportDefaultContent = `export default { ${files.map((f: any) => f.name).join(', ')} };`;
 
-	const writeContent = `${importContent}\n${exportContent}\n${exportDefaultContent}`;
+	const libName = getLibName();
+	const libContent = `const ${libName} = { ${files.map((f: any) => f.name).join(', ')} };`;
+
+	const importContent = files.map((f: any) => `import ${f.name} from '${f.path}';`).join('\n');
+
+	const exportContent = `export { ${files.map((f: any) => f.name).join(', ')} };`;
+	const exportDefaultContent = `export default ${libName};`;
+
+	const writeContent = `${importContent}\n${libContent}\n${exportContent}\n${exportDefaultContent}`;
 
 	fs.writeFileSync(resolve('index.ts'), writeContent, WRITE_FILE_OPTIONS);
 
