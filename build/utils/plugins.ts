@@ -58,7 +58,7 @@ const defaultPlugins = () => [
 		],
 		plugins: ['@babel/plugin-external-helpers'],
 		externalHelpers: true,
-		runtimeHelpers: true,
+		runtimeHelpers: false,
 		extensions: [...DEFAULT_EXTENSIONS, '.ts'],
 		include: [resolveDir('src/**')],
 		exclude: resolveDir('node_modules/**')
