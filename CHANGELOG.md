@@ -1,5 +1,14 @@
 # 工具库更新日志
 
+## [1.0.8](https://github.com/RootWater/toolbox/compare/v1.0.7...v1.0.8) (2021-02-03)
+
+
+### Features
+
+* **string-tool:** 新增大驼峰转换 ([1c56b5a](https://github.com/RootWater/toolbox/commit/1c56b5ab1d3ea8c626b1b6efe718d965ffd7fd1e))
+
+
+
 ## [1.0.7](https://github.com/RootWater/toolbox/compare/v1.0.6...v1.0.7) (2021-02-02)
 
 
