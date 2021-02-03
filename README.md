@@ -1,6 +1,8 @@
 # @super/toolbox
 便于开发的超级工具库，其中集成了 lodash、axios、dayjs 等常用函数。
 
+## [查看 api 文档](./markdown/index.md)
+
 ## 安装
 ```
 yarn [install]
