@@ -1,11 +1,11 @@
 {
-	"name": "super-toolbox",
-	"version": "1.0.9",
+	"name": "@super/toolbox",
+	"version": "1.0.8",
 	"description": "开发工具库。",
 	"main": "./lib/toolbox.js",
 	"module": "./lib/toolbox.esm.js",
 	"typings": "./typings/index.d.ts",
-	"author": "hhl",
+	"author": "murray.lei",
 	"license": "MIT",
 	"keywords": [
 		"tool",
@@ -16,7 +16,6 @@
 	"files": [
 		"lib",
 		"typings",
-		"markdown",
 		"package.json",
 		"README.md",
 		"CHANGELOG.md",
@@ -47,7 +46,7 @@
 		"clean:lib": "rimraf lib",
 		"clean:es5": "rimraf es5",
 		"clean:nm": "rimraf node_modules",
-		"prepublishOnly": "set NODE_ENV=production && yarn lint & yarn test & yarn changelog & make prod",
+		"prepublishOnly": "set NODE_ENV=production && yarn lint & yarn test & yarn changelog",
 		"publish:patch": "npm version patch && npm publish",
 		"publish:minor": "npm version minor && npm publish",
 		"publish:major": "npm version major && npm publish",

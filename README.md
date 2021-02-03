@@ -1,4 +1,4 @@
-# super-toolbox
+# @super/toolbox
 便于开发的超级工具库，其中集成了 lodash、axios、dayjs 等常用函数。
 
 ## 安装
