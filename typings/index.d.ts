@@ -74,7 +74,7 @@ import uniqWith from 'lodash/uniqWith';
 import upperCase from 'lodash/upperCase';
 import upperFirst from 'lodash/upperFirst';
 import words from 'lodash/words';
-declare namespace SuperToolbox {
+declare namespace HLToolbox {
 export { assign }
 export { assignWith }
 export { at }
@@ -326,4 +326,4 @@ export { words }
 export { }
 
 }
-export = SuperToolbox
+export = HLToolbox

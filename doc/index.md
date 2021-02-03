@@ -8,5 +8,5 @@
 
 |  Package | Description |
 |  --- | --- |
-|  [@super/toolbox](./toolbox.md) |  |
+|  [@h.l/toolbox](./toolbox.md) |  |
 
