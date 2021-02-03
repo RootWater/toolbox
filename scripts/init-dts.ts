@@ -15,8 +15,12 @@ const targetFileContent = fs.readFileSync(
 	extractorConfig.mainEntryPointFilePath,
 	FILE_OPTIONS
 ) as string;
+const targetReferenceContent =
+	targetFileContent
+		.match(/(?<=reference types=")\w+(?=")/g)
+		?.map((item) => `\/\/\/<reference types="${item}"\/>`) ?? [];
 const targetImportContent = targetFileContent.substring(
-	0,
+	targetFileContent.indexOf('import'),
 	targetFileContent.indexOf(`declare const ${libName}`)
 );
 const targetExportContent = targetFileContent.substring(
@@ -59,4 +63,8 @@ outputFileContent =
 	`\n` +
 	`export = ${libName}`;
 
-fs.writeFileSync(extractorConfig.untrimmedFilePath, outputFileContent, FILE_OPTIONS);
+fs.writeFileSync(
+	extractorConfig.untrimmedFilePath,
+	`${targetReferenceContent.join('\n')}\n${outputFileContent}`,
+	FILE_OPTIONS
+);
