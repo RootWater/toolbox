@@ -1,5 +1,5 @@
 {
-	"name": "toolbox",
+	"name": "super-toolbox",
 	"version": "1.0.7",
 	"description": "开发工具库。",
 	"main": "./lib/toolbox.js",
@@ -27,9 +27,6 @@
 		"url": "https://github.com/RootWater/toolbox/issues"
 	},
 	"homepage": "https://github.com/RootWater/toolbox#README.md",
-	"publishConfig": {
-		"registry": "http://localhost:4873"
-	},
 	"scripts": {
 		"init:plugins": "ts-node scripts/init-plugins.ts",
 		"init:tools": "ts-node scripts/init-tools.ts",
@@ -81,6 +78,7 @@
 		"@typescript-eslint/parser": "^4.14.0",
 		"assert": "^2.0.0",
 		"chalk": "^4.1.0",
+		"commitizen": "^4.2.3",
 		"conventional-changelog-cli": "^2.1.1",
 		"cz-conventional-changelog": "^3.3.0",
 		"eslint": "^7.18.0",

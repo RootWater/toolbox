@@ -1,5 +1,15 @@
 # 工具库更新日志
 
+## [1.0.7](https://github.com/RootWater/toolbox/compare/v1.0.6...v1.0.7) (2021-02-02)
+
+
+### Bug Fixes
+
+* **makefile:** 修复 api 文档生成 ([1f3e136](https://github.com/RootWater/toolbox/commit/1f3e136403f723b1804b19f88bc69c6edda23138))
+* **makefile:** 修复 make 命令 ([1a701fa](https://github.com/RootWater/toolbox/commit/1a701fabd883f032f099ec1964986946a31d82c6))
+
+
+
 ## [1.0.6](https://github.com/RootWater/toolbox/compare/v1.0.5...v1.0.6) (2021-02-02)
 
 

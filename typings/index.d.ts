@@ -74,7 +74,7 @@ import uniqWith from 'lodash/uniqWith';
 import upperCase from 'lodash/upperCase';
 import upperFirst from 'lodash/upperFirst';
 import words from 'lodash/words';
-declare namespace Toolbox {
+declare namespace SuperToolbox {
 export { assign }
 export { assignWith }
 export { at }
@@ -90,6 +90,12 @@ export const base64Decode: (str: string) => string;
  * @param str 目标字符串
  */
 export const base64Encode: (str: string) => string;
+
+/**
+ * 大驼峰转换
+ * @param str 目标字符串
+ */
+export const bigCamelCase: (str?: string | undefined) => string;
 export { camelCase }
 export { capitalize }
 export { castArray }
@@ -320,4 +326,4 @@ export { words }
 export { }
 
 }
-export = Toolbox
+export = SuperToolbox
