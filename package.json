@@ -1,6 +1,6 @@
 {
 	"name": "super-toolbox",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "开发工具库。",
 	"main": "./lib/toolbox.js",
 	"module": "./lib/toolbox.esm.js",
