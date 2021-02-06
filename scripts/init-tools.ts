@@ -25,10 +25,13 @@ const getToolFiles = (dirs: string[]) => {
 		fs
 			.readdirSync(resolve(path))
 			.filter((dir) => suffixReg.test(dir))
-			.map((file) => ({
-				name: _.camelCase(file.replace(suffixReg, '')),
-				path: `./${path}/${file.replace(suffixReg, '')}`
-			}))
+			.map((file) => {
+				file = file.replace(suffixReg, '');
+				return {
+					name: /^[A-Z]+$/.test(file) ? file : _.camelCase(file),
+					path: `./${path}/${file}`
+				};
+			})
 	);
 	const files = _.flattenDeep(toolFiles);
 	const fileCount = files

@@ -1,6 +1,16 @@
 # 工具库更新日志
 
-## [1.0.9](https://github.com/RootWater/toolbox/compare/v1.0.8...v1.0.9) (2021-02-03)
+## [1.0.10](https://github.com/RootWater/toolbox/compare/v1.0.8...v1.0.10) (2021-02-06)
+
+
+### Bug Fixes
+
+* **str-equal-ignore-case.ts:** fix str-equal-ignore-case ([b9f99de](https://github.com/RootWater/toolbox/commit/b9f99de38af7de015705036a287625572e9d5ede))
+
+
+### Features
+
+* **color-tool, log-tool, rule-tool:** 新增颜色工具、日志工具、规则工具 ([8f0b8bc](https://github.com/RootWater/toolbox/commit/8f0b8bcb86743000521bf6693bee0cf8b7efc729))
 
 
 
