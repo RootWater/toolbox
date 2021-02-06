@@ -11,14 +11,22 @@
 |  [base64Decode](./toolbox.base64decode.md) | base64 解密 |
 |  [base64Encode](./toolbox.base64encode.md) | base64 加密 |
 |  [bigCamelCase](./toolbox.bigcamelcase.md) | 大驼峰转换 |
-|  [checkType](./toolbox.checktype.md) | 检查目标对象类型 |
+|  [checkEmail](./toolbox.checkemail.md) | 校验邮箱  依赖于 async-validator 校验 |
+|  [checkLen](./toolbox.checklen.md) | 校验字符或数组长度  依赖于 async-validator 校验 |
+|  [checkPhone](./toolbox.checkphone.md) | 校验手机号  依赖于 async-validator 校验 |
+|  [checkRequired](./toolbox.checkrequired.md) | 校验必填  依赖于 async-validator 校验必填 |
+|  [checkWord](./toolbox.checkword.md) | 校验字母、数字、下划线  依赖于 async-validator 校验 |
+|  [colorHex](./toolbox.colorhex.md) | rgb 转 16 进制  rgb(0,0,0) --<!-- -->&gt; \#000 |
+|  [colorRgb](./toolbox.colorrgb.md) | 16 进制转 rgb  \#000 --<!-- -->&gt; rgb(0, 0, 0) |
 |  [countMatches](./toolbox.countmatches.md) | 统计目标字符串中子串出现的次数 |
 |  [defaultIfEmpty](./toolbox.defaultifempty.md) | 如果目标对象为空时返回默认值 |
 |  [deleteWhitespace](./toolbox.deletewhitespace.md) | 删除空白符 |
 |  [getRawType](./toolbox.getrawtype.md) | 获取目标对象真实类型 |
-|  [isEmpty](./toolbox.isempty.md) | 是否为空  "" \| null \| undefined \| Object.keys(target).length === 0 会返回 true， map \| set \| weakMap \| weakSet 判断 size === 0 时返回 true |
+|  [isEmpty](./toolbox.isempty.md) | 是否为空  " " \| null \| undefined \| Object.keys(target).length === 0 会返回 true， map \| set \| weakMap \| weakSet 判断 size === 0 时返回 true |
+|  [log](./toolbox.log.md) | LOG 日志 |
 |  [obj2FormData](./toolbox.obj2formdata.md) | Object 转为 FormData |
 |  [oneOf](./toolbox.oneof.md) | 待检值是否存在于检测数组中 |
 |  [strEqualIgnoreCase](./toolbox.strequalignorecase.md) | 字符串对比忽略大小写 |
 |  [swapCase](./toolbox.swapcase.md) | 反转字母大小写 |
+|  [type](./toolbox.type.md) | 类型检查 |
 

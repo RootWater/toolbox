@@ -4,7 +4,7 @@
 
 ## isEmpty variable
 
-是否为空  "" \| null \| undefined \| Object.keys(target).length === 0 会返回 true， map \| set \| weakMap \| weakSet 判断 size === 0 时返回 true
+是否为空  " " \| null \| undefined \| Object.keys(target).length === 0 会返回 true， map \| set \| weakMap \| weakSet 判断 size === 0 时返回 true
 
 <b>Signature:</b>
 

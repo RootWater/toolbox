@@ -1,5 +1,3 @@
-import { RuleTrigger } from '../../typings/typed';
-
 /**
  * 校验必填
  * @description 依赖于 async-validator 校验必填

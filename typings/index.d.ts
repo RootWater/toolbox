@@ -1,4 +1,6 @@
 ///<reference types="lodash"/>
+///<reference types="node"/>
+/// <reference types="node" />
 import assign from 'lodash/assign';
 import assignWith from 'lodash/assignWith';
 import at from 'lodash/at';
@@ -102,85 +104,114 @@ export { capitalize }
 export { castArray }
 
 /**
- * 检查目标对象类型
- * @param target 目标对象
+ * 校验邮箱
+ * @description 依赖于 async-validator 校验
+ *
+ * @param message 失败消息
+ * @param trigger 触发条件
+ *
+ * @default message 邮箱格式不正确
+ * @default trigger blur
  */
-export const checkType: (target: any) => {
-    /**
-     * 验证类型是否一致
-     * @param t 校验类型
-     *
-     * @example
-     * checkType(target).validType('valid')
-     */
-    validType: (t: string) => boolean;
-    /**
-     * 自定义验证
-     * @param cb 回调函数
-     *
-     * @example
-     * checkType(target).customValid((type) => type === 'custom')
-     */
-    customValid: (cb: (t: string) => boolean) => boolean;
-    /** 字符串 */
-    isString: boolean;
-    /** 数字 */
-    isNumber: boolean;
-    /** 布尔 */
-    isBoolean: boolean;
-    /** 对象 */
-    isObject: boolean;
-    /** 数组 */
-    isArray: boolean;
-    /** ArrayBuffer */
-    isArrayBuffer: boolean;
-    /** FormData */
-    isFormData: boolean;
-    /** 日期 */
-    isDate: boolean;
-    /** Null */
-    isNull: boolean;
-    /** Undefined */
-    isUndefined: boolean;
-    /** Map */
-    isMap: boolean;
-    /** Set */
-    isSet: boolean;
-    /** WeakMap */
-    isWeakMap: boolean;
-    /** WeakSet */
-    isWeakSet: boolean;
-    /** 函数 */
-    isFunction: boolean;
-    /** arguments */
-    isArguments: boolean;
-    /** dom 元素 */
-    isElement: boolean;
-    /** Buffer */
-    isBuffer: boolean;
-    /** Error */
-    isError: boolean;
-    /**正则 */
-    isRegExp: boolean;
-    /** Symbol */
-    isSymbol: boolean;
-    /**
-     * 空值
-     * @description null | undefined
-     */
-    isNullish: boolean;
-    /**
-     * 基础类型
-     * @description string | number | boolean | null | undefined
-     */
-    isBasics: boolean;
-    /** Infinity */
-    isFinite: boolean;
-    /** 安全数字 */
-    isSafeInteger: boolean;
+export const checkEmail: (message?: string, trigger?: RuleTrigger) => {
+    type: string;
+    message: string;
+    trigger: RuleTrigger;
+};
+
+/**
+ * 校验字符或数组长度
+ * @description 依赖于 async-validator 校验
+ *
+ * @param min 最小值
+ * @param max 最大值
+ * @param message 失败消息
+ * @param type 数据类型，值为其他类型时需填入对应类型关键词
+ * @param trigger 触发条件
+ *
+ * @default min 1
+ * @default max 20
+ * @default message 输入内容长度为 [min] ~ [max]
+ * @default type string
+ * @default trigger change
+ */
+export const checkLen: (min?: number, max?: number, message?: string, type?: string, trigger?: RuleTrigger) => {
+    type: string;
+    min: number;
+    max: number;
+    message: string;
+    trigger: RuleTrigger;
+};
+
+/**
+ * 校验手机号
+ * @description 依赖于 async-validator 校验
+ *
+ * @param message 失败消息
+ * @param trigger 触发条件
+ *
+ * @default message 手机号格式不正确
+ * @default trigger blur
+ */
+export const checkPhone: (message?: string, trigger?: RuleTrigger) => {
+    pattern: RegExp;
+    message: string;
+    trigger: RuleTrigger;
+};
+
+/**
+ * 校验必填
+ * @description 依赖于 async-validator 校验必填
+ *
+ * @param message 失败消息
+ * @param type 数据类型，值为其他类型时需填入对应类型关键词
+ * @param trigger 触发条件
+ *
+ * @default message 当前项为必填信息
+ * @default type string
+ * @default trigger blur
+ */
+export const checkRequired: (message?: string, type?: string, trigger?: RuleTrigger) => {
+    type: string;
+    required: boolean;
+    message: string;
+    trigger: RuleTrigger;
+};
+
+/**
+ * 校验字母、数字、下划线
+ * @description 依赖于 async-validator 校验
+ *
+ * @param message 失败消息
+ * @param trigger 触发条件
+ *
+ * @default message 输入格式仅支持字母、数字、_
+ * @default trigger blur
+ */
+export const checkWord: (message?: string, trigger?: RuleTrigger) => {
+    type: string;
+    pattern: RegExp;
+    message: string;
+    trigger: RuleTrigger;
 };
 export { clamp }
 export { cloneDeep }
+
+/**
+ * rgb 转 16 进制
+ * @description rgb(0,0,0) --> #000
+ *
+ * @param color rgb 颜色
+ */
+export const colorHex: (color: string) => string;
+
+/**
+ * 16 进制转 rgb
+ * @description #000 --> rgb(0, 0, 0)
+ *
+ * @param color 16 进制颜色
+ */
+export const colorRgb: (color: string) => string;
 export { compact }
 
 /**
@@ -237,7 +268,7 @@ export { intersectionWith }
 /**
  * 是否为空
  * @description
- * "" | null | undefined | Object.keys(target).length === 0 会返回 true，
+ * " " | null | undefined | Object.keys(target).length === 0 会返回 true，
  * map | set | weakMap | weakSet 判断 size === 0 时返回 true
  *
  * @param target 目标对象
@@ -246,6 +277,53 @@ export const isEmpty: (target: any) => any;
 export { isEqual }
 export { isEqualWith }
 export { kebabCase }
+
+/** LOG 日志 */
+export const log: {
+    /**
+     * 打印一个 [ title | text ] 样式的信息
+     * @param title 标题
+     * @param info 信息
+     * @param type 样式
+     */
+    capsule(title: string, info: any, type?: "error" | "default" | "primary" | "success" | "warning" | "text" | undefined): void;
+    /**
+     * 打印彩色文字
+     * @param infoArr 信息数组
+     */
+    colorful(infoArr: {
+        info: string;
+        type?: LogColor;
+    }[]): void;
+    /**
+     * 打印普通信息
+     * @param infos 信息集合
+     */
+    info(...infos: string[]): void;
+    /**
+     * 打印主色信息
+     * @param infos 信息集合
+     */
+    primary(...infos: string[]): void;
+    /**
+     * 打印成功色信息
+     * @param infos 信息集合
+     */
+    success(...infos: string[]): void;
+    /**
+     * 打印警告色信息
+     * @param infos 信息集合
+     */
+    warning(...infos: string[]): void;
+    /**
+     * 打印错误色信息
+     * @param infos 信息集合
+     */
+    error(...infos: string[]): void;
+};
+
+/** 日志颜色样式 */
+type LogColor = 'default' | 'primary' | 'success' | 'warning' | 'error' | 'text';
 export { lowerCase }
 export { lowerFirst }
 export { maxBy }
@@ -313,6 +391,60 @@ export const swapCase: (str: string) => string;
 export { throttle }
 export { toPath }
 export { truncate }
+
+/** 类型检查 */
+export const type: {
+    /** 字符串类型 */
+    isString: (target: any) => target is string;
+    /** 数字类型 */
+    isNumber: (target: any) => target is number;
+    /** 布尔类型 */
+    isBoolean: (target: any) => target is boolean;
+    /** 对象类型 */
+    isObject: (target: any) => target is object;
+    /** 数组类型 */
+    isArray: (target: any) => target is any[];
+    /** ArrayBuffer */
+    isArrayBuffer: (target: any) => target is ArrayBuffer;
+    /** 表单数据类型 */
+    isFormData: (target: any) => target is FormData;
+    /** 日期类型 */
+    isDate: (target: any) => target is Date;
+    /** Null */
+    isNull: (target: any) => target is null;
+    /** Undefined */
+    isUndefined: (target: any) => target is undefined;
+    /** Map */
+    isMap: (target: any) => target is Map<any, any>;
+    /** Set */
+    isSet: (target: any) => target is Set<any>;
+    /** WeakMap */
+    isWeakMap: (target: any) => target is WeakMap<any, any>;
+    /** WeakSet */
+    isWeakSet: (target: any) => target is WeakSet<any>;
+    /** 函数类型 */
+    isFunction: (target: any) => target is Function;
+    /** Dom 元素类型 */
+    isElement: (target: any) => target is Element;
+    /** Buffer */
+    isBuffer: (target: any) => target is Buffer;
+    /** Error */
+    isError: (target: any) => target is Error;
+    /** 正则类型 */
+    isRegExp: (target: any) => target is RegExp;
+    /** Symbol */
+    isSymbol: (target: any) => target is Symbol;
+    /**
+     * 空值类型
+     * @description null | undefined
+     */
+    isNullish: (target: any) => target is Nullish;
+    /**
+     * 基础类型
+     * @description string | number | boolean | null | undefined
+     */
+    isBasicType: (target: any) => target is BasicType;
+};
 export { union }
 export { unionBy }
 export { unionWith }

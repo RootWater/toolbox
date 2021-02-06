@@ -1,5 +1,4 @@
 import getRawType from './getRawType';
-import { BasicType, Nullish } from '../../typings/typed';
 
 /** 类型检查 */
 const TYPE = {
