@@ -26,11 +26,7 @@ const start = async () => {
 		const target = process.env.TARGET ?? ['umd', 'min', 'esm', 'cjs'];
 
 		for (const t of Array.isArray(target) ? target : [target.trim()]) {
-			const rollupConfig = createConfig(t as ModuleFormatType, [
-				'tslib',
-				'axios',
-				'@babel/polyfill'
-			]);
+			const rollupConfig = createConfig(t as ModuleFormatType, ['@babel/polyfill']);
 			await buildEntry(rollupConfig);
 		}
 

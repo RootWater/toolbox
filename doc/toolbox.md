@@ -23,10 +23,10 @@
 |  [deleteWhitespace](./toolbox.deletewhitespace.md) | 删除空白符 |
 |  [getRawType](./toolbox.getrawtype.md) | 获取目标对象真实类型 |
 |  [isEmpty](./toolbox.isempty.md) | 是否为空  " " \| null \| undefined \| Object.keys(target).length === 0 会返回 true， map \| set \| weakMap \| weakSet 判断 size === 0 时返回 true |
-|  [log](./toolbox.log.md) | LOG 日志 |
+|  [LOG](./toolbox.log.md) | LOG 日志 |
 |  [obj2FormData](./toolbox.obj2formdata.md) | Object 转为 FormData |
 |  [oneOf](./toolbox.oneof.md) | 待检值是否存在于检测数组中 |
 |  [strEqualIgnoreCase](./toolbox.strequalignorecase.md) | 字符串对比忽略大小写 |
 |  [swapCase](./toolbox.swapcase.md) | 反转字母大小写 |
-|  [type](./toolbox.type.md) | 类型检查 |
+|  [TYPE](./toolbox.type.md) | 类型检查 |
 

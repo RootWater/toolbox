@@ -279,7 +279,7 @@ export { isEqualWith }
 export { kebabCase }
 
 /** LOG 日志 */
-export const log: {
+export const LOG: {
     /**
      * 打印一个 [ title | text ] 样式的信息
      * @param title 标题
@@ -393,7 +393,7 @@ export { toPath }
 export { truncate }
 
 /** 类型检查 */
-export const type: {
+export const TYPE: {
     /** 字符串类型 */
     isString: (target: any) => target is string;
     /** 数字类型 */
