@@ -1,4 +1,5 @@
 import isEqual from '../lodash-tool/isEqual';
+import defaultIfEmpty from '../object-tool/defaultIfEmpty';
 
 /**
  * 字符串对比忽略大小写
@@ -6,6 +7,6 @@ import isEqual from '../lodash-tool/isEqual';
  * @param str2 字符串 2
  */
 const strEqualIgnoreCase = (str1: string, str2: string) =>
-	isEqual(str1.toLowerCase(), str2.toLowerCase);
+	isEqual(defaultIfEmpty(str1).toLowerCase(), defaultIfEmpty(str2).toLowerCase());
 
 export default strEqualIgnoreCase;
