@@ -1,3 +1,5 @@
+import { BasicType } from '../../typings/typed';
+
 /**
  * 待检值是否存在于检测数组中
  * @param target 待检值

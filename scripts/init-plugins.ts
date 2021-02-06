@@ -4,16 +4,16 @@ import Ora from '../build/utils/ora';
 const building = new Ora();
 
 /** 获取插件内容 */
-const getPluginContent = (name: string, plugin: { name: string; path: string }) =>
-	`import ${plugin.name} from '${name}/${plugin.path}';` +
-	`\n` +
+const getPluginContent = (name: string, plugin: { name: string; path: string; comments: string }) =>
+	`import ${plugin.name} from '${name}/${plugin.path}';\n` +
+	`${plugin.comments}\n` +
 	`export default ${plugin.name};`;
 
 /** 写入插件文件 */
 const writePluginFiles = async (name: string, plugins: any[]) => {
 	building.info(`开始写入 ${name} 下的工具函数！`);
 
-	plugins = plugins.map((p) => (typeof p === 'string' ? { name: p, path: p } : p));
+	plugins = plugins.map((p) => (typeof p === 'string' ? { name: p, path: p, comments: '' } : p));
 
 	for (const plugin of plugins) {
 		const path = resolveSrc(`${name}-tool`, `${plugin.name}.ts`);

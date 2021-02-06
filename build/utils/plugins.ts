@@ -51,7 +51,7 @@ const defaultPlugins = () => [
 				{
 					modules: false,
 					useBuiltIns: 'usage',
-					targets: { browsers: 'ie >= 9', node: 8 },
+					targets: { browsers: 'ie >= 10', node: 8 },
 					corejs: 3
 				}
 			]
