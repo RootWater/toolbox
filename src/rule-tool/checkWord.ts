@@ -8,7 +8,7 @@
  * @default message 输入格式仅支持字母、数字、_
  * @default trigger blur
  */
-const checkWord = (message = '输入格式仅支持字母、数字、_', trigger: RuleTrigger = 'blur') => ({
+const checkWord = (message = '输入格式仅支持字母、数字、_', trigger?: RuleTrigger) => ({
 	type: 'string',
 	pattern: /^\w+$/g,
 	message,

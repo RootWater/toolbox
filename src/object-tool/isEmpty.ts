@@ -8,11 +8,11 @@ import TYPE from './TYPE';
  *
  * @param target 目标对象
  */
-const isEmpty = (target: any) => {
+const isEmpty = (target: any): target is Nullish => {
 	if (TYPE.isNullish(target)) return true;
 	if (TYPE.isString(target)) return !target.trim().length;
 	if (['isMap', 'isSet', 'isWeakMap', 'isWeakSet'].some((key) => TYPE?.[key](target)))
-		return target.size;
+		return target.size > 0;
 
 	return !Object.keys(target).length;
 };

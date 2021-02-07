@@ -4,7 +4,7 @@
  *
  * @param color 16 进制颜色
  */
-const colorRGB = (color: string) => {
+const colorRgb = (color: string) => {
 	// 16 进制颜色值的正则
 	const reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
 
@@ -30,4 +30,4 @@ const colorRGB = (color: string) => {
 	return 'rgb(' + colorArr.join(',') + ')';
 };
 
-export default colorRGB;
+export default colorRgb;

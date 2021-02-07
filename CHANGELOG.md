@@ -1,5 +1,14 @@
 # 工具库更新日志
 
+## [1.0.11](https://github.com/RootWater/toolbox/compare/v1.0.10...v1.0.11) (2021-02-06)
+
+
+### Bug Fixes
+
+* **start-build:** 修复工具库打包问题 ([5dc689c](https://github.com/RootWater/toolbox/commit/5dc689c5d6bde97a0f0bfefc567caf5bd63e37a6))
+
+
+
 ## [1.0.10](https://github.com/RootWater/toolbox/compare/v1.0.8...v1.0.10) (2021-02-06)
 
 

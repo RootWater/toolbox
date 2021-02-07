@@ -19,7 +19,7 @@ const checkLen = (
 	max = 20,
 	message = `输入内容长度为 ${min} ~ ${max}`,
 	type = 'string',
-	trigger: RuleTrigger = 'change'
+	trigger?: RuleTrigger
 ) => ({
 	type,
 	min,
